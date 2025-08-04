@@ -1,0 +1,321 @@
+:root {
+  /* Primary Colors */
+  --primary-bg: #ff6bcb;
+  --primary-text: #ffffff;
+  --primary-btn: #ff4f9a;
+
+  /* Accent Colors */
+  --accent-color: #ffb3d6;
+  --secondary-accent: #ffe3ec;
+  --light-accent: #fff0f6;
+
+  /* Section Backgrounds */
+  --section-bg-home: linear-gradient(135deg, #ff6bcb 0%, #ff4f9a 100%);
+  --section-bg-about: #ffe3ec;
+  --section-bg-skills: #fff0f6;
+  --section-bg-contact: #ffe3ec;
+  --section-bg-projects: #fff0f6;
+
+  /* Text Colors */
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-muted: #b2bec3;
+
+  /* Button Colors */
+  --btn-primary-bg: #ff4f9a;
+/* Glassmorphism Navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 192, 203, 0.15);
+}
+  --btn-primary-text: #ffffff;
+  --btn-outline-light-border: #ff4f9a;
+  --btn-outline-light-text: #ff4f9a;
+
+  /* Card & Badge Colors */
+  --badge-bg: #fff0f6;
+  --badge-text: #ff4f9a;
+  --card-shadow: rgba(255, 79, 154, 0.08);
+
+  /* Font Families */
+  --main-font: 'Poppins', 'Segoe UI', 'Montserrat', sans-serif;
+  --heading-font: 'Poppins', 'Segoe UI', sans-serif;
+
+  /* Icon Sizes */
+  --icon-size: 48px;
+  --icon-radius: 0.75rem;
+  --icon-font-size: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--main-font);
+  color: var(--text-primary);
+  background-color: var(--light-accent);
+}
+
+.section-padding-x {
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
+}
+@media (max-width: 768px) {
+  .section-padding-x {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+.custom-gradient {
+  background: var(--section-bg-home);
+  color: var(--primary-text);
+}
+
+/* Buttons */
+.btn-dark,
+.btn-primary {
+  background-color: var(--btn-primary-bg) !important;
+  color: var(--btn-primary-text) !important;
+  font-family: var(--main-font);
+  font-weight: 600;
+  border: none;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-dark:hover,
+.btn-primary:hover {
+  background-color: var(--accent-color) !important;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.btn-outline-light {
+  border: 1px solid var(--btn-outline-light-border);
+  color: var(--btn-outline-light-text);
+  background: transparent;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-outline-light:hover {
+  background: var(--btn-primary-bg);
+  color: var(--primary-text);
+}
+
+/* Section background overrides */
+section#about { background-color: var(--section-bg-about); }
+section#skills { background-color: var(--section-bg-skills); }
+section#contact { background-color: var(--section-bg-contact); }
+section#projects { background-color: var(--section-bg-projects); }
+
+/* Cards and containers */
+.card,
+.bg-white {
+  background-color: #fff;
+  box-shadow: 0 4px 24px var(--card-shadow);
+  border-radius: 1rem;
+}
+
+/* Trait Box – reusable block container */
+.trait-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 24px var(--card-shadow);
+  height: 100%;
+}
+
+/* Trait icon – reusable pink background icon */
+.trait-icon-bg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-color: var(--badge-bg) !important;
+  color: var(--badge-text) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--icon-radius);
+  box-shadow: 0 2px 12px rgba(255, 79, 154, 0.08);
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s, border 0.3s;
+}
+.trait-icon-bg i {
+  font-size: var(--icon-font-size);
+  color: var(--badge-text) !important;
+  font-weight: 400;
+  filter: drop-shadow(0 1px 2px rgba(255, 79, 154, 0.12));
+}
+.trait-icon-bg:hover {
+  background: var(--accent-color) !important;
+  color: var(--primary-text) !important;
+  border: 2px solid var(--primary-text);
+  box-shadow: 0 4px 24px rgba(255, 79, 154, 0.18);
+  transform: scale(1.1);
+}
+
+/* Glass icon (social-style) */
+.glass-icon {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+}
+.glass-icon:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Icon box – used in hero or feature sections */
+.icon-box,
+.rounded-circle.bg-primary,
+.d-flex.align-items-center.justify-content-center.rounded {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: var(--icon-font-size);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(255, 79, 154, 0.08);
+  transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s, border 0.3s;
+}
+.icon-box i {
+  color: #fff !important;
+}
+.icon-box:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--btn-primary-bg) !important;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 24px rgba(255, 79, 154, 0.18);
+  transform: scale(1.1);
+}
+
+/* Home section CTA */
+.home-contact-btn {
+  border: 2px solid var(--btn-primary-bg) !important;
+  color: #fff !important;
+  background: transparent !important;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+.home-contact-btn:hover {
+  background: var(--btn-primary-bg) !important;
+  color: #fff !important;
+  border: 2px solid var(--btn-primary-bg) !important;
+}
+
+/* Badges */
+.badge.bg-light {
+  background-color: var(--badge-bg) !important;
+  color: var(--badge-text) !important;
+  font-family: var(--main-font);
+  font-weight: 500;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+.section-title {
+  color: var(--btn-primary-bg);
+  font-family: var(--heading-font);
+  font-weight: 700;
+}
+
+/* Utility text/bg */
+.text-pink {
+  color: var(--btn-primary-bg) !important;
+}
+.bg-pink {
+  background-color: var(--btn-primary-bg) !important;
+}
+
+/* Light pink button for code buttons in projects */
+.btn-light-pink {
+  background: var(--accent-color) !important;
+  color: var(--btn-primary-text) !important;
+  border: none !important;
+  font-weight: 600;
+  transition: none;
+}
+.btn-light-pink:hover,
+.btn-light-pink:focus {
+  background: var(--accent-color) !important;
+  color: var(--btn-primary-text) !important;
+  border: none !important;
+}
+
+/* Pill-shaped badge utility */
+.badge-pill, .rounded-pill {
+  border-radius: 50rem !important;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+@keyframes animate-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-bounce {
+  animation: animate-bounce 1.2s infinite;
+}
+@keyframes animate-fade-in-scale {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-fade-in-scale {
+  animation: animate-fade-in-scale 0.8s;
+}
+@keyframes animate-slide-in-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in-up {
+  animation: animate-slide-in-up 0.8s;
+}
+
+/* Glassmorphism Navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.38); /* more white, less pink */
+  border-bottom: 2px solid rgba(255, 79, 154, 0.12);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 24px var(--card-shadow);
+}
+.glass-navbar .navbar-brand,
+.glass-navbar .nav-link {
+  color: var(--btn-primary-bg) !important;
+  text-shadow: 0 1px 6px rgba(255, 79, 154, 0.12);
+  font-weight: 600;
+}
+.glass-navbar .nav-link.active {
+  color: var(--primary-bg) !important;
+}
+.glass-navbar .navbar-toggler {
+  border-color: var(--btn-primary-bg);
+}
+.glass-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,79,154,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Glassmorphism Footer */
+.glass-footer {
+  background: rgba(255, 107, 203, 0.18); /* pink glass effect */
+  border-top: 2px solid rgba(255, 79, 154, 0.18);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 -4px 24px var(--card-shadow);
+}
+.footer {
+  color: var(--btn-primary-bg);
+  font-family: var(--main-font);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
